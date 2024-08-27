@@ -1,0 +1,41 @@
+
+============================== Scenarios de Teste ============================================
+
+  Scenario: Pesquisar por um termo específico
+    Dado que estou na página inicial
+    Quando eu clico no botão de pesquisa
+    E eu insiro "FGTS" no campo de pesquisa
+    E pressiono enter no campo de pesquisa
+    Entao a página de resultados de pesquisa deve exibir resultados para "FGTS"
+    E a página de resultados de pesquisa deve exibir uma lista de resultados
+
+  Scenario: Pesquisar por um termo inválido
+    Dado que estou na página inicial
+    Quando eu clico no botão de pesquisa
+    E eu insiro "p@ssw0rd" no campo de pesquisa
+    E pressiono enter no campo de pesquisa
+    Entao a página de resultados de pesquisa não deve exibir resultados
+    E a página de resultados de pesquisa deve exibir uma mensagem de palavra nao encontrada 
+
+  Scenario: Pesquisar com campo vazio
+    Dado que estou na página inicial
+    Quando eu clico no botão de pesquisa
+    E pressiono enter no campo de pesquisa
+    Entao a página de resultados de pesquisa deve exibir uma lista de resultados específicos
+
+  Scenario: Navegar para a página inicial a partir da página de resultados de pesquisa
+    Dado que estou na página de resultados de pesquisa
+    Quando eu clico no botão de início
+    Entao eu devo estar na página inicial
+	
+==============================================================================================
+
+No scenario que busca por vazio esta retornando com uma lista de assuntos aleatorios 
+sugesstao é que retornase uma mensagem para inserir uma palavra na busca ou esse campo nao poder vazio 
+
+Como teste exploratio foi realizado palavras com numeros, com caracteres especiais, frases
+como a busca é feita com metodo de contains sempre está retornando algo.
+
+Para fazer um teste mais profundo e com criterios de automação correto o ideal seria 
+ter os criterios de aceite pois assim podemos aplicar algumas tecnicas de testes para 
+garantir melhor qualidade e usabilidade do sistema 
